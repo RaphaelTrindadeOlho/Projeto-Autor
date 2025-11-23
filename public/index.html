@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Final - Node + Mongo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="auth-screen" class="container">
+        <h2>Acesso ao Sistema</h2>
+        <input type="email" id="email" placeholder="Seu email">
+        <input type="password" id="senha" placeholder="Sua senha">
+        <div class="buttons">
+            <button onclick="fazerLogin()">Entrar</button>
+            <button onclick="registrar()" class="secondary">Criar Conta</button>
+        </div>
+        <p id="msg-erro" style="color: red;"></p>
+    </div>
+
+    <div id="dashboard-screen" class="container hidden">
+        <header>
+            <h1>Gerenciador de Mídia</h1>
+            <button onclick="logout()" class="logout-btn">Sair</button>
+        </header>
+
+        <nav>
+            <button onclick="carregar('autores')">Autores</button>
+            <button onclick="carregar('livros')">Livros</button>
+            <button onclick="carregar('cds')">CDs</button>
+            <button onclick="carregar('dvds')">DVDs</button>
+        </nav>
+
+        <hr>
+
+        <div id="form-section">
+            <h3 id="titulo-form">Adicionar Novo</h3>
+            <div id="inputs-dinamicos">
+                </div>
+            <button onclick="salvarItem()" class="save-btn">Salvar</button>
+        </div>
+
+        <hr>
+
+        <h3>Lista de Cadastrados</h3>
+        <ul id="lista-itens"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
