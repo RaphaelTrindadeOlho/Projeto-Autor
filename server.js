@@ -12,10 +12,8 @@ connectDB();
 app.use(express.json());
 app.use(cors());
 
-// Rota de teste simples
-app.get('/', (req, res) => {
-    res.send('API Funcionando! Banco conectado.');
-});
+// Rotas
+app.use('/api', require('./src/routes/api'));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
