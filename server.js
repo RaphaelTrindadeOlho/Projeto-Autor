@@ -12,6 +12,9 @@ connectDB();
 app.use(express.json());
 app.use(cors());
 
+// Servir arquivos estáticos 
+app.use(express.static('public'));
+
 // Rotas
 app.use('/api', require('./src/routes/api'));
 
